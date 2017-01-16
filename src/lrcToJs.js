@@ -1,60 +1,9 @@
-
-var strVar = "";
-    strVar += "[ti:喜剧之王] ";
-    strVar += "[ar:李荣浩] ";
-    strVar += "[00:00.41] 喜剧之王 - 李荣浩";
-    strVar += "[00:03.29] 词：黄伟文";
-    strVar += "[00:04.76] 曲：李荣浩";
-    strVar += "[00:16.18] 我看着颗猕猴桃";
-    strVar += "[00:24.13] 眼泪突然被引爆";
-    strVar += "[00:30.64] 我可不是 可不是 特别爱闹";
-    strVar += "[00:34.84] 这叫做 这叫做 心灵感召";
-    strVar += "[00:38.87] 不信你问李清照";
-    strVar += "[00:46.13] 我天生不爱炫耀";
-    strVar += "[00:53.14] 却太多艺术细胞";
-    strVar += "[00:59.98] 我谈的情 拍的拖 也许很少";
-    strVar += "[01:03.88] 中的枪 捱的刀 受的煎熬";
-    strVar += "[01:07.96] 华丽得无法低调";
-    strVar += "[01:17.39] 为什么 全世界的恋 我都失一遍";
-    strVar += "[01:21.81] 为所有的悲剧 当特约演员";
-    strVar += "[01:25.49] 我伤得断肠 我哭得夸张";
-    strVar += "[01:29.06] 像一套港产片";
-    strVar += "[01:32.08] 为何 普天下的泪 我先流一遍";
-    strVar += "[01:36.24] 市面上的纸巾 都由我代言";
-    strVar += "[01:39.97] 站在我旁边 你不算可怜";
-    strVar += "[01:43.66] 这也是种贡献";
-    strVar += "[01:53.26] 被分手的那一秒";
-    strVar += "[02:00.63] 我疯狂往海边跑";
-    strVar += "[02:06.98] 你有什么资格说 我很无聊";
-    strVar += "[02:11.10] 你那次淋着雨 失控咆哮";
-    strVar += "[02:15.23] 廉价小说那一套";
-    strVar += "[02:24.44] 为什么 全世界的恋 我都失一遍";
-    strVar += "[02:29.09] 为所有的悲剧 当特约演员";
-    strVar += "[02:32.72] 我伤得断肠 我哭得夸张";
-    strVar += "[02:36.37] 像一套港产片";
-    strVar += "[02:39.35] 为何 普天下的泪 我先流一遍";
-    strVar += "[02:43.56] 市面上的纸巾 都由我代言";
-    strVar += "[02:47.30] 站在我旁边 你不算可怜";
-    strVar += "[02:51.02] 这也是种贡献";
-    strVar += "[02:53.97] 啦啦啦啦 啦啦啦 啦啦啦啦......";
-    strVar += "[03:15.26] 每一天 都活在 电影里面";
-    strVar += "[03:19.04] 每一天 都活在 小说里面";
-    strVar += "[03:22.60] 每一天 都活在 K歌里面";
-    strVar += "[03:26.23] 每一天 都活在 MV里面";
-    strVar += "[03:29.86] 这世界本来就是场 真人秀表演";
-    strVar += "[03:36.37] 实在难避免";
-    strVar += "[03:39.29] 幕揭开 全世界的恋 我都失一遍";
-    strVar += "[03:43.45] 为所有的悲剧 当特约演员";
-    strVar += "[03:47.31] 我伤得断肠 我哭得夸张";
-    strVar += "[03:51.00]只为了红几年";
-
-
 /**
- * 将歌词文本转化为程序变量
+ * 将歌词文本转化为js变量
  * @param  {[string]} lrc [歌词字符串]
  * @return {[type]}     [description]
  */
-var analyseLrc=function(lrc){
+var lrcToJs=function(lrc){
     "use strict";
 
     /**
@@ -89,18 +38,22 @@ var analyseLrc=function(lrc){
 
 	};
 
+    //获取歌词内容数组
     returnHandle.prototype.getLrcFiled=function(){
         return this._lrcFiled;
     };
 
+    //获取歌词内容时间顺序数组
     returnHandle.prototype.getLrcOrder=function(){
         return this._lrcOrder;
     };
 
+    //获取歌曲信息or歌手信息
     returnHandle.prototype.getTagFiled=function(){
         return this._tagField;
     };
 
+    //格式化歌词
     returnHandle.prototype.initLrc = function() {
 
         //console.log(this.sourceCode);
@@ -153,7 +106,6 @@ var analyseLrc=function(lrc){
         return this;
 
     };
-
 	return new returnHandle(lrc);
 };
 

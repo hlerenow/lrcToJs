@@ -21,14 +21,14 @@ gulp.task("browserSync",function(){
 });
 
 gulp.task("compress_js",function(){
-	return gulp.src("lineEditor.js")
+	return gulp.src("src/*.js")
 	.pipe(uglify())
 	.pipe(rename({suffix:".min"}))
 	.pipe(gulp.dest("dist/"))
 });
 
 gulp.task("compres_css",function(){
-	return gulp.src("*.css")
+	return gulp.src("src/*.css")
 	.pipe(clearCSS())
 	.pipe(rename({suffix:".min"}))
 	.pipe(gulp.dest("dist/"))	
